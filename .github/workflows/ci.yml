@@ -20,4 +20,6 @@
                      #you can check it is there on git hub actions
                     with:
                      node-version: ''   
+                -   name: checknode version
+                    run: node --version
                 
