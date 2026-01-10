@@ -23,3 +23,7 @@
                 -   name: checknode version
                     run: node --version
                 
+            #cloning the project    
+                -   name: clone the pipeline
+                    uses: actions/checkout@v6 #featch the github repo inside the runner machine
+                
