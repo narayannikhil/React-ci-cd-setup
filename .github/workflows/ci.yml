@@ -1,0 +1,19 @@
+    name: smaple react ci pipline/workflow
+
+    on:
+        push:
+            branches:
+                - main
+                - master
+
+    jobs:
+        built-and-test:
+            runs-on: ubuntu-latest
+                #using github actions               
+            steps:
+                - name: set-up nodejs
+                #we are going to use github actions insted of saying run we say uses
+                - uses: actions/set-node@v4 #you can check it is there on git hub actions
+                  with:
+                    node-version: '21'  
+                    
