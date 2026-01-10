@@ -10,8 +10,13 @@
         built-and-test:
             runs-on: ubuntu-latest
                 #using github actions               
+
+                #we are going to use github actions insted of saying run we say uses
+
             steps:
                 - name: Setup Node JS
-                #we are going to use github actions insted of saying run we say uses
-                - uses: actions/setup-node@v4 #you can check it is there on git hub actions
-                 
+                - uses: actions/setup-node@v6
+                     #you can check it is there on git hub actions
+                  with:
+                     node-version: ''   
+                
