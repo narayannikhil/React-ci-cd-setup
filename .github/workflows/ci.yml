@@ -14,9 +14,10 @@
                 #we are going to use github actions insted of saying run we say uses
 
             steps:
-                
-                - uses: actions/setup-node@v6
+                -   name: setup nodejs
+
+                    uses: actions/setup-node@v6
                      #you can check it is there on git hub actions
-                  with:
+                    with:
                      node-version: ''   
                 
