@@ -29,3 +29,7 @@
                 
                 -   name: Install Dependencies
                     run: npm install
+                
+                -   name: list directories
+                    run: ls
+        
