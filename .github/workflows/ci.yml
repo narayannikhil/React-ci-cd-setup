@@ -27,3 +27,5 @@
                 -   name: clone the pipeline
                     uses: actions/checkout@v6 #featch the github repo inside the runner machine
                 
+                -   name: Install Dependencies
+                    run: npm install
