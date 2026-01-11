@@ -14,14 +14,14 @@
                 -   name: set up nodejs 
                     uses: actions/setup-node@v4
                     with:
-                         node version: ''
+                         node version: '21'
+                
                 -   name: Download build files
                     uses: actions/upload-artifact@v4
                     with:
                         name: build 
-                        path: dist
-                -   name: set up vercel cli
-                    run: npm install -g vercel    
+                        run-id: ${{ github.event.workflow_run.id}}
+                        github-token: ${{ github.token}}
                 
                         
                 -   name: Deploy to vercel
