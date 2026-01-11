@@ -40,8 +40,4 @@
                 -   name: run builds
                     run: npm run bild
                 
-                -   name: upload product ready 
-                    uses: actions/upload-artifact@v4
-                    with:
-                        name: build
-                        path: dist
+                
