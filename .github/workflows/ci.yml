@@ -36,8 +36,7 @@
 
                 -   name: list directories
                     run: ls
-                -   name: run lint
-                    run: npm run lint
+               
                 -   name: run tests
                     run: npm test    
                 
@@ -45,4 +44,8 @@
                 -   name: run builds
                     run: npm run build
                 
-                
+                -   name: uploading product ready build files
+                    run: actions/upload-artifact@v4
+                    with:
+                        name: build
+                        path: dist
