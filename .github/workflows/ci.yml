@@ -38,6 +38,6 @@
                     run: ls
                     
                 -   name: run builds
-                    run: npm run bild
+                    run: npm run build
                 
                 
