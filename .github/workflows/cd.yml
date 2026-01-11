@@ -1,0 +1,16 @@
+    name: cd pipline
+
+    on:
+        workflow_run:
+            workflows: [smaple react ci pipline/workflow]
+            types: 
+                - completed:
+
+    jobs:
+        deploy:
+            runs-on: ubuntu-latest
+
+            steps:
+
+                - name: Download build files
+                  uses: uses-
