@@ -35,4 +35,9 @@
                 
                 -   name: list directories
                     run: ls
-        
+                    
+                -   name: upload product ready 
+                    uses: actions/upload-artifact@v4
+                    with:
+                        name: build
+                        path: /dist
