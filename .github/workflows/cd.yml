@@ -15,13 +15,14 @@
                     uses: actions/setup-node@v4
                     with:
                          node version: ''
-                -   name: set up vercel cli
-                    run: npm install -g vercel    
                 -   name: Download build files
                     uses: actions/upload-artifact@v4
                     with:
                         name: build 
                         path: dist
+                -   name: set up vercel cli
+                    run: npm install -g vercel    
+                
                         
                 -   name: Deploy to vercel
                     run: vercel --prod --token=${{secrets.VERCEL_TOKEN }} --confirm --name=cicdproject
