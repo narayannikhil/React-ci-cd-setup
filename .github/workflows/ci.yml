@@ -40,4 +40,4 @@
                     uses: actions/upload-artifact@v4
                     with:
                         name: build
-                        path: dist
+                        path: /home/nikhil/Desktop/Developer/Reactcicd/dist
