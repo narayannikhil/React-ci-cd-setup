@@ -44,8 +44,8 @@
                 -   name: run builds
                     run: npm run build
                 
-                -   name: uploading product ready build files
-                    run: actions/upload-artifact@v4
-                    with:
-                        name: build
-                        path: dist
+                -   name: Upload production ready build files
+                    uses: actions/upload-artifact@v4
+                    with:                    # 2 spaces from 'uses'
+                        name: build            # 2 spaces from 'with'
+                        path: dist             # 2 spaces from 'with'
