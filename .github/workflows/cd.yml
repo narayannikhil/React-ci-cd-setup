@@ -30,4 +30,28 @@
                 -   name: Deploy to vercel
                     run: vercel --prod --token=${{secrets.VERCEL_TOKEN }} --confirm --name=cicdproject
                     
-                
+            # mailing 
+
+                -   name: Send success notification
+                    if: success()
+                    run: |
+                        python scripts/send-notification.py success "${{ steps.deploy.outputs.url }}"
+                    env:
+                        SENDER_EMAIL: ${{ secrets.SMTP_EMAIL }}
+                        SENDER_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+                        RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
+                        WORKFLOW_NAME: ${{ github.workflow }}
+                        REPO_NAME: ${{ github.repository }}
+                        WORKFLOW_RUN_ID: ${{ github.run_id }}
+
+                -    name: Send failure notification
+                     if: failure()
+                     run: |
+                        python scripts/send-notification.py failed
+                     env: 
+                        SENDER_EMAIL: ${{ secrets.SMTP_EMAIL }}
+                        SENDER_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+                        RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
+                        WORKFLOW_NAME: ${{ github.workflow }}
+                        REPO_NAME: ${{ github.repository }}
+                        WORKFLOW_RUN_ID: ${{ github.run_id }}
