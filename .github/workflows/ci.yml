@@ -1,4 +1,4 @@
-    name: smaple react ci pipline/workflow
+    name: sample react ci pipline/workflow
 
     on:
         push:
@@ -7,7 +7,7 @@
                 - master
 
     jobs:
-        built-and-test:
+        build-and-test:
             runs-on: ubuntu-latest
                 #using github actions               
 
@@ -31,8 +31,7 @@
                     run: ls
             
                 -   name: Install Dependencies
-                    run: npm install
-                
+                    run: npm ci
 
                 -   name: list directories
                     run: ls

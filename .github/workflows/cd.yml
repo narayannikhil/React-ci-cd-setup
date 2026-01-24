@@ -14,7 +14,7 @@
                 -   name: set up nodejs 
                     uses: actions/setup-node@v4
                     with:
-                         node version: ''
+                         node version: '20'
                 -   name: set up vercel cli
                     run: npm install -g vercel   
 
